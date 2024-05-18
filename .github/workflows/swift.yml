@@ -17,7 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Firefighter Build Tests
-      run: |
-        xcodebuild build -project ./iOS/banchango.xcodeproj -scheme banchango -destination "platform=iOS Simulator,name=iPhone 13,OS=latest"
-        xcpretty --color --simple
+    - name: Build Xcode  
+      run: |  
+        xcodebuild clean test -project ./iOS/banchango.xcodeproj \
+        -scheme banchango \
+        -destination 'platform=iOS Simulator,name=iPhone 13,OS=latest'
