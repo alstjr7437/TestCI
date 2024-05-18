@@ -20,5 +20,6 @@ jobs:
     - name: Build Xcode  
       run: |  
         xcodebuild clean test -project ./iOS/banchango.xcodeproj \
+        -allowProvisioningUpdates \
         -scheme banchango \
         -destination 'platform=iOS Simulator,name=iPhone 13,OS=latest'
